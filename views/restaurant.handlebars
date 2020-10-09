@@ -1,0 +1,55 @@
+<h1><img src = "{{restaurant.image}}" class="resized"/>
+      {{restaurant.name}}
+  
+        <a class="delete" href='/restaurants/{{restaurant.id}}/delete'>Delete</a>
+        <a class="delete" href='/restaurants/{{restaurant.id}}/edit'> Edit </a>
+   
+</h1>
+<nav class="menu"> 
+        <a href="/"> Home </a> |
+        <a href="/restaurants"> Restaurants </a> |
+        <a href="/book"> Book </a> |
+</nav>
+ <div class="add">
+    <h3> 
+        Add Menu </h3>
+        <form action='/restaurants/{{restaurant.id}}' method="POST">
+        <label> New Menu's Name: </label>
+        <input name="title" type="text" placeholder="Menu's title" required><br>
+        <button type="submit"> Submit </button>
+    </form>
+</div>
+<section class="table">
+    {{#each menus}}
+        <article class="table">
+            <h3>{{this.title}}
+                <a href='/restaurants/{{../restaurant.id}}/menus/{{this.id}}/delete'>Delete </a>
+                <a href='/restaurants/{{../restaurant.id}}/menus/{{this.id}}/editmenu'> Edit </a>
+            </h3>
+            <dl>
+                {{#each this.items}}
+                    <div>
+                        <dt>{{this.name}}</dt> 
+                        <dd>£{{this.price}}</dd>
+                        <a href='/restaurants/{{../../restaurant.id}}/menus/{{../this.id}}/items/{{this.id}}/delete'>Delete</a>
+                        <a href='/restaurants/{{../../restaurant.id}}/menus/{{../this.id}}/items/{{this.id}}/edititem'> Edit </a>
+                    </dv>
+                    
+                {{/each}}
+            </dl>
+            <div class="add">
+                <h3> 
+                    Add Item
+                </h3>
+                <form action='/restaurants/{{../restaurant.id}}/menus/{{this.id}}' method="POST">
+                <label>Item's Name: </label>
+                <input name="name" type="text" placeholder="Item's name" required><br>
+                <label> Price </label>
+                <input name="price" type="number" placeholder="price" step="0.01" required><br>
+                <button type="submit"> Add </button>
+                </form>
+            </div>
+        </article>
+    {{/each}}
+</section> 
+   

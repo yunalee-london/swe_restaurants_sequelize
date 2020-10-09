@@ -1,0 +1,139 @@
+* {
+    padding: 10;
+    margin: 10;
+    font-family: 'Bradley Hand', cursive;
+}
+body {
+    background-color: rgba(239, 245, 243, 0.966);
+    color: black;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:   
+     'header header header'
+     'nav nav nav'
+     'article article article';
+}
+h1 {
+    grid-area: header;
+    position: relative;
+    padding: 2rem 1rem;
+    color: rgb(8, 8, 8);
+    letter-spacing: 2px;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+}
+
+nav {
+    position: relative;
+    margin: 10px;
+    letter-spacing: 1px;
+    grid-area: nav;
+    font-size: 20px;
+} 
+
+nav.menu{ 
+    text-align: center;
+}
+
+article.image {
+    height: 25rem;
+    width: 20rem;
+    border: solid 1px white;
+    margin: auto;
+    border-radius: 1rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    position:relative; 
+    background-size: 100% 80%;
+}
+
+h2 {
+    height: 5rem;
+    width: 20rem;
+    line-height: 5rem;
+    margin: 0px;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    padding-bottom: 0px;
+    color: black;
+    background-color: white;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    text-shadow : 1px 2px 3px gray;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+h3 {
+    border-bottom: solid black 1px;
+    background-color: rgba(192, 189, 189, 0.938);
+    padding: 5px 5px;
+}
+
+.home1 {
+    text-align: center;
+}
+
+.home2 {
+    margin-left: 40%;
+    width: 100%;
+    height: 80%;
+}
+.add{
+    border: solid gray 1px;
+    border-radius: 1rem;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.delete{
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.addMenu {
+    font-size: 1rem;
+    border: solid gray 1px;
+    border-radius: 1rem;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    padding: 0;
+    width: 25%;
+
+}
+
+.resized {
+    width: 100rem;
+    height: 50rem;
+}
+
+@media screen and (min-width: 40em) {
+   section {
+    display: grid;   
+    grid-template-columns: auto auto;
+    grid-template-rows: none;
+    padding: 1rem;
+    gap: 1rem;
+   }
+   article {
+       margin: 0;
+   }
+}
+
+@media screen and (min-width: 60em) {
+    section {
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (min-width: 80em) {
+    section {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+

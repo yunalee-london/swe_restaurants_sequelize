@@ -1,0 +1,25 @@
+<h1 class="header"> All Restaurants </h1>
+    <nav>
+        <a href="/"> Home </a> |
+        <a href="/restaurants"> Restaurants </a> |
+        <a href="/book"> Book </a> |
+    </nav>
+<section>
+    {{#each restaurants}}
+    <a href="/restaurants/{{this.id}}"/>
+        <article class="image" style="background-image: url('{{this.image}}');">
+            <h2> {{this.name}} </h2>      
+        </article>
+    {{/each}}
+</section>
+<div class="add">
+    <h3 class="addRes"> Add Your Restaurant</h3>
+    <form action='/restaurants' method="POST">
+    <label> Restaurant's Name: </label>
+    <input name="name" type="text" placeholder="Restaurant's name" required> <br>
+    <label> Restaurant's Photo: </label>
+    <input name="photo" type='url' placeholder="Restaurant's photo url" required> <br>
+    <button type="submit"> Submit </button>
+    </form>
+</div>
+

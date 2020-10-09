@@ -1,0 +1,9 @@
+<form action="/restaurants/{{restaurant_id}}/menus/{{menu_id}}/items/{{item.id}}/edititem" method="POST">
+    <div>
+        <label>Change Item </label>
+        <input name="name" value="{{item.name}}" />
+           <label>Change Price </label>
+        <input name="price" value="{{item.price}}" step="0.01"/>
+    </div>
+    <button>Update</button>
+</form>

@@ -17,7 +17,7 @@ describe('Restaurant', () => {
     })
     test('can add an item to a menu', async() => {
         const menu = await Menu.create({title: "Dessert"})
-        const item = await Item.create({title: "Brownie", price: 3.50})
+        const item = await Item.create({name: "Brownie", price: 3.50})
         await menu.addItem(item)
         const items = await menu.getItems()
         expect(items.length).toBe(1)
