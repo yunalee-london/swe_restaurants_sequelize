@@ -9,12 +9,6 @@ const handlebars = expressHandlebars({
     handlebars: allowInsecurePrototypeAccess(Handlebars)
 })
 
-//const path = require('path')
-
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'index.html'))
-// })
-
 app.use(express.static("public"))
 app.engine('handlebars', handlebars)
 app.set('view engine', 'handlebars')
